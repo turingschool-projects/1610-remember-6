@@ -13,7 +13,7 @@ test('viewing the homepage', function(assert) {
   visit('/');
 
   andThen(function() {
-    assert.equal(currentURL(), '/', 'visting homepage');
+    assert.equal(currentURL(), '/reminders', 'visting "/" redirects to "/reminders"');
     assert.equal(Ember.$('.spec-reminder-item').length, 5, 'renders 5 reminders with class .spec-reminder-item');
   });
 });

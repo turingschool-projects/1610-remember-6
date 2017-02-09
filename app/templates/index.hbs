@@ -1,0 +1,9 @@
+<div>hello</div>
+{{#each model as |reminder|}}
+  <li class="spec-reminder-item">
+    {{reminder.title}}
+    <div>{{reminder.date}}</div>
+    <div>{{reminder.notes}}</div>
+  </li>
+{{/each}}
+{{outlet}}

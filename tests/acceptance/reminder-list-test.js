@@ -26,5 +26,6 @@ test('clicking on an individual item', function(assert) {
   andThen(function() {
     assert.equal(currentURL(), '/reminders/1', 'clicking the first item links to url /1');
     assert.equal(Ember.$('.spec-reminder-item:first').text().trim(), Ember.$('.spec-reminder-title').text().trim(), 'the individual title matches the first item in the reminders list');
+    assert.equal(Ember.$('.active').length, 1, 'one item has class active');
   });
 });

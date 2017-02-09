@@ -7,15 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-<<<<<<< HEAD
-  this.route('reminders');
-=======
+
   this.route('/');
   this.route('reminders', function(){
     this.route('index', { path: '/' });
     this.route('reminder', { path: '/:id' });
   });
->>>>>>> d0186d1... create nested route for individual notes
 });
 
 export default Router;

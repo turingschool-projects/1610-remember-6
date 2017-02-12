@@ -1,17 +1,3 @@
-<form class="add-note--form" {{action 'createNote' on="submit"}}>
- <label>
-   Title
-   {{input class="spec-input-title" value=title}}
- </label>
- <label>
-   Date
-   {{input class="spec-input-date" value=date}}
- </label>
- <label>
-   Note
-   {{textarea class="spec-textarea-note" value=note}}
- </label>
- <button class="add-note--submit">Submit</button>
-</form>
+{{new-note}}
 
 <!-- {{link-to "reminders"}} -->

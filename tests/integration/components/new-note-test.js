@@ -5,21 +5,19 @@ moduleForComponent('new-note', 'Integration | Component | new note', {
   integration: true
 });
 
-test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it renders with default string properties', function(assert) {
   this.render(hbs`{{new-note}}`);
+  assert.equal(this.$('.spec-input-title').text().trim(), '', 'title is empty string');
+  assert.equal(this.$('.spec-input-date').text().trim(), '', 'date is empty string');
+  assert.equal(this.$('.spec-textarea-notes').text().trim(), '', 'notes is empty string');
+});
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#new-note}}
-      template block text
-    {{/new-note}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+test('it renders an updated values', function(assert) {
+  this.set('title', 'bob');
+  this.set('date', 'now');
+  this.set('notes', 'bobs note');
+  this.render(hbs`{{new-note title=title date=date notes=notes}}`);
+  assert.equal(this.$('.spec-input-title').val(), 'bob', 'title equates to bob');
+  assert.equal(this.$('.spec-input-date').val(), 'now', 'date equates to now');
+  assert.equal(this.$('.spec-textarea-notes').val(), 'bobs note', 'notes equates to bobs note');
 });

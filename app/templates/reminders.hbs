@@ -3,15 +3,18 @@
 {{#if model}}
   {{#each model as |reminder|}}
     <li>
-    {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
-      {{reminder.title}}
-    {{/link-to}}
-    <button {{action 'remove' reminder.id}}>delete this reminder</button>
+      {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
+        {{reminder.title}}
+      {{/link-to}}
+      <button class="spec-reminder-delete" {{action 'remove' reminder.id}}>
+        delete this reminder
+      </button>
     </li>
   {{/each}}
 {{else}}
-<div class="spec-prompt-message">enter a reminder</div>
+  <div class="spec-prompt-message">enter a reminder</div>
 {{/if}}
 
 {{link-to "New Reminder" "reminders.new"}}
+
 {{outlet}}

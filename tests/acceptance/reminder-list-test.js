@@ -40,3 +40,31 @@ test('Prompt user to enter new note when no notes are present', function(assert)
     assert.equal(find('.spec-prompt-message').text(), 'enter a reminder', 'should display a condescending message when no notes are present')
   })
 })
+
+test('Clicking delete removes from reminders..', function(assert) {
+  server.createList('reminder', 5);
+  visit('/reminders');
+  andThen(function() {
+    assert.equal(find('.spec-reminder-item').length, 5, 'there are 5 items present');
+    click('.spec-reminder-delete:first');
+  })
+  andThen(function() {
+    assert.equal(find('.spec-reminder-item').length, 4, 'now there are 4');
+  })
+})
+
+test('clicking delete from an individual reminder...', function(assert) {
+  server.createList('reminder', 5);
+  visit('/reminders');
+  click('.spec-reminder-item:first');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/reminders/1', 'we are now on the nested URL');
+    click('.spec-delete-individual');
+  })
+
+  andThen(function() {
+    assert.equal(currentURL(),'/reminders', 'transition to reminders route')
+    assert.equal(find('.spec-reminder-item').length, 4, 'and the reminder has been deleted')
+  })
+});

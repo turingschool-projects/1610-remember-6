@@ -1,5 +1,5 @@
 <h1 class="spec-reminder-title">{{model.title}}</h1>
 <div>{{model.date}}</div>
 <div>{{model.notes}}</div>
-<button {{action 'remove' model.id}}>delete this reminder</button>
+<button class="spec-delete-individual" {{action 'remove' model.id}}>delete this reminder</button>
 {{outlet}}

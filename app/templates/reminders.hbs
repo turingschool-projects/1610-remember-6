@@ -6,6 +6,7 @@
     {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
       {{reminder.title}}
     {{/link-to}}
+    <button {{action 'remove' reminder.id}}>delete this reminder</button>
     </li>
   {{/each}}
 {{else}}

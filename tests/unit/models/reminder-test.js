@@ -12,9 +12,9 @@ test('it exists', function(assert) {
 
 test('should render an object with title, date, and notes', function(assert) {
   let reminder = this.subject({title: 'doesnt matter', date: "12/12/16", notes: 'some stuff'});
-  assert.equal(reminder.get('title'), 'doesnt matter', 'has a title')
-  assert.equal(reminder.get('date'), '12/12/16', 'has a date')
-  assert.equal(reminder.get('notes'), 'some stuff', 'has notes')
+  assert.equal(reminder.get('title'), 'doesnt matter', 'has a title');
+  assert.equal(reminder.get('date'), '12/12/16', 'has a date');
+  assert.equal(reminder.get('notes'), 'some stuff', 'has notes');
 });
 
 test('it has an attribute: title', function(assert) {

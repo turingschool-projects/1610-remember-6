@@ -29,3 +29,14 @@ test('clicking on an individual item', function(assert) {
     assert.equal(Ember.$('.active').length, 1, 'one item has class active');
   });
 });
+
+test('Prompt user to enter new note when no notes are present', function(assert) {
+  visit('/');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/reminders', 'we be on the correct url');
+    assert.equal(find('.spec-reminder-item').length, 0, 'no reminders present');
+    assert.equal(find('.spec-prompt-message').length, 1, 'message div is present when no reminders exist')
+    assert.equal(find('.spec-prompt-message').text(), 'enter a reminder', 'should display a condescending message when no notes are present')
+  })
+})

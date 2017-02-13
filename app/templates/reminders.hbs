@@ -1,9 +1,15 @@
 <h1>Reminders</h1>
-{{#each model as |reminder|}}
-  <li>
-  {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
-    {{reminder.title}}
-  {{/link-to}}
-  </li>
-{{/each}}
+
+{{#if model}}
+  {{#each model as |reminder|}}
+    <li>
+    {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
+      {{reminder.title}}
+    {{/link-to}}
+    </li>
+  {{/each}}
+{{else}}
+<div class="spec-prompt-message">enter a reminder</div>
+{{/if}}
+
 {{outlet}}

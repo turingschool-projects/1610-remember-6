@@ -11,5 +11,6 @@
    Note
    {{textarea class="spec-textarea-notes" value=model.notes}}
  </label>
+ <button class="edit-notes--revert" {{action 'undoEdit' model.id}}>Undo</button>
  <button class="edit-notes--submit">Submit</button>
 </form>

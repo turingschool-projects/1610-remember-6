@@ -1,15 +1,15 @@
 <form class="edit-notes--form" {{action 'updateNote' model.id on="submit"}}>
  <label>
    Title
-   {{input class="spec-input-title" value=title}}
+   {{input class="spec-input-title" value=model.title}}
  </label>
  <label>
    Date
-   {{input class="spec-input-date" value=date}}
+   {{input class="spec-input-date" value=model.date}}
  </label>
  <label>
    Note
-   {{textarea class="spec-textarea-notes" value=notes}}
+   {{textarea class="spec-textarea-notes" value=model.notes}}
  </label>
  <button class="edit-notes--submit">Submit</button>
 </form>

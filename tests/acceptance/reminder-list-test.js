@@ -67,4 +67,5 @@ test('clicking delete from an individual reminder...', function(assert) {
     assert.equal(currentURL(),'/reminders', 'transition to reminders route')
     assert.equal(find('.spec-reminder-item').length, 4, 'and the reminder has been deleted')
   })
+
 });

@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   actions: {
     remove(id) {
       this.get('store').findRecord('reminder', id, {
-        backgroundReload: false }).then(function(post) {
+        backgroundReload: false }).then((post)=> {
         post.destroyRecord();
       }).then(()=>{
         this.transitionToRoute('reminders')

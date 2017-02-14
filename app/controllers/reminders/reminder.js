@@ -9,6 +9,6 @@ export default Ember.Controller.extend({
       }).then(()=>{
         this.transitionToRoute('reminders')
       })
-    }
+    },
   }
 });

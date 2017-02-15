@@ -69,3 +69,40 @@ test('clicking delete from an individual reminder...', function(assert) {
   })
 
 });
+
+test('failing to save an edited reminder will show a visual cue', function(assert) {
+    visit('reminders/new');
+    fillIn('.spec-input-title', 'Remind me to go to class');
+    fillIn('.spec-input-date', 'Tomorrow');
+    fillIn('.spec-textarea-notes', 'Because');
+    click('.add-notes--submit');
+
+    andThen(function() {
+      assert.equal(currentURL(), 'reminders/new', 'should route to reminders/new');
+      assert.equal(find('.spec-reminder-item').length, 1, 'should create a note');
+      assert.equal(find('.spec-reminder-item').text().trim(), 'Remind me to go to class', 'should list original note title');
+    });
+
+    click('.spec-reminder-item:first');
+    click('.spec-link-to-edit');
+
+    andThen(function() {
+      assert.equal(find('.dirty-attribute').length, 0, 'reminder should not have a class of dirty-attribute');
+    })
+
+    andThen(function() {
+      assert.equal(currentURL(), '/reminders/1/edit', 'should route to edit page')
+    });
+
+    fillIn('.spec-input-title', 'Remind me to get a job tomorrow');
+    fillIn('.spec-input-date', 'Tomorrow');
+    fillIn('.spec-textarea-notes', 'Nah');
+
+    andThen(function() {
+      assert.equal(find('.spec-reminder-item').text().trim(), 'Remind me to get a job tomorrow', 'should list updated title on page');
+    });
+
+    andThen(function() {
+      assert.equal(find('.dirty-attribute').length, 1, 'reminder should have a class of dirty-attribute');
+    })
+  });

@@ -19,13 +19,5 @@ export default Ember.Controller.extend({
         reminder.rollbackAttributes();
       })
     }
-
-    // dirtyThang(id) {
-    //   this.get('store').findRecord('reminder', id, {
-    //     backgroundReload: false }).then((post)=> {
-    //     post.get('hasDirtyAttributes');
-    //
-    //   })
-    // }
   }
 });

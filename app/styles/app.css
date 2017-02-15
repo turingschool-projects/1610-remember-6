@@ -1,8 +1,59 @@
+body {
+  text-align: center;
+}
+
 .active{
-  color: magenta;
+  color: blue;
   font-weight: bold;
+}
+
+li {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .dirty-attribute {
   background-color: rgba(220,20,60,.2);
+}
+
+.spec-reminder-title {
+  font-size: 22px;
+}
+
+.spec-reminder-delete {
+  margin: 10px auto;
+}
+
+button {
+  font-size: 12px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: lightgray;
+  border: 1px solid black;
+  margin: 10px;
+  width: 150px;
+}
+
+.add-notes--form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-notes--submit {
+  margin: 0 auto;
+}
+
+input, textarea {
+  margin: 10px;
+  width: 200px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

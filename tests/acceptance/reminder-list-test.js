@@ -105,4 +105,10 @@ test('failing to save an edited reminder will show a visual cue', function(asser
     andThen(function() {
       assert.equal(find('.dirty-attribute').length, 1, 'reminder should have a class of dirty-attribute');
     })
+
+    click('.edit-notes--submit');
+
+    andThen(function() {
+      assert.equal(find('.dirty-attribute').length, 0, 'reminder should not have a class of dirty-attribute after clicking save');
+    })
   });

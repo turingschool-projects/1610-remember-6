@@ -9,6 +9,7 @@ moduleForAcceptance('Acceptance | edit note')
     fillIn('.spec-input-date', 'Tomorrow');
     fillIn('.spec-textarea-notes', 'Because');
     click('.add-notes--submit');
+    
     andThen(function() {
       assert.equal(currentURL(), 'reminders/new', 'should route to reminders/new');
       assert.equal(find('.spec-reminder-item').length, 1, 'should create one note');
@@ -17,6 +18,7 @@ moduleForAcceptance('Acceptance | edit note')
 
     click('.spec-reminder-item:first');
     click('.spec-link-to-edit');
+    
     andThen(function() {
       assert.equal(currentURL(), '/reminders/1/edit', 'should route to edit page')
     });
@@ -25,6 +27,7 @@ moduleForAcceptance('Acceptance | edit note')
     fillIn('.spec-input-date', 'Tomorrow');
     fillIn('.spec-textarea-notes', 'Nah');
     click('.edit-notes--submit');
+    
     andThen(function() {
       assert.equal(currentURL(), '/reminders/1', 'clicking submit on edit page reroutes to individual reminders page');
       assert.equal(find('.spec-reminder-item').length, 1, 'should show 1 note on reminders page');
@@ -38,6 +41,7 @@ moduleForAcceptance('Acceptance | edit note')
     fillIn('.spec-input-date', 'Tomorrow');
     fillIn('.spec-textarea-notes', 'Because');
     click('.add-notes--submit');
+    
     andThen(function() {
       assert.equal(currentURL(), 'reminders/new', 'should route to reminders/new');
       assert.equal(find('.spec-reminder-item').length, 1, 'should create a note');
@@ -46,6 +50,7 @@ moduleForAcceptance('Acceptance | edit note')
 
     click('.spec-reminder-item:first');
     click('.spec-link-to-edit');
+    
     andThen(function() {
       assert.equal(currentURL(), '/reminders/1/edit', 'should route to edit page')
     });
@@ -53,10 +58,13 @@ moduleForAcceptance('Acceptance | edit note')
     fillIn('.spec-input-title', 'Remind me to get a job tomorrow');
     fillIn('.spec-input-date', 'Tomorrow');
     fillIn('.spec-textarea-notes', 'Nah');
+    
     andThen(function() {
       assert.equal(find('.spec-reminder-item').text().trim(), 'Remind me to get a job tomorrow', 'should list updated title on page before undo is clicked');
     });
-    click('.edit-notes--revert')
+    
+    click('.edit-notes--revert');
+    
     andThen(function() {
       assert.equal(find('.spec-reminder-item').text().trim(), 'Remind me to go to class', 'should revert to original title after undo is clicked.');
     })

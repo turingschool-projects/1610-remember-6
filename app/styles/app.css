@@ -1,5 +1,6 @@
 body {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .active{
@@ -7,22 +8,70 @@ body {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 40vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*header*/
+
+.header-name {
+  display: flex;
+  justify-content: center;
+}
+
+/*reminder-list*/
+
+.reminders-container {
+  width: 40vw;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/*.spec-reminder-item {
+  display: inline-block;
+}*/
+
 li {
   margin: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .dirty-attribute {
   background-color: rgba(220,20,60,.2);
 }
 
+/*new reminder*/
+
+.new-reminder-btn {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-top: 20px;
+}
+
+.add-notes--form {
+  /*margin: 20px;*/
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+/*single reminder*/
+
 .spec-reminder-title {
   font-size: 22px;
 }
 
 .spec-reminder-delete {
-  margin: 10px auto;
+  /*margin-left: 30px;*/
 }
 
 button {
@@ -31,29 +80,12 @@ button {
   box-shadow: none;
   border-radius: 0;
   background-color: lightgray;
-  border: 1px solid black;
-  margin: 10px;
+  border: none;
+  padding: 10px;
   width: 150px;
-}
-
-.add-notes--form {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.add-notes--submit {
-  margin: 0 auto;
 }
 
 input, textarea {
   margin: 10px;
   width: 200px;
-}
-
-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

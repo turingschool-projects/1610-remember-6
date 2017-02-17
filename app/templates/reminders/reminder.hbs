@@ -1,7 +1,8 @@
-
-<h1 class="spec-reminder-title">{{model.title}}</h1>
-<div>{{model.date}}</div>
-<div>{{model.notes}}</div>
-<button class="spec-delete-individual" {{action 'remove' model.id}}>delete this reminder</button>
-{{#link-to "reminders.reminder.edit" class="spec-link-to-edit"}}edit this reminder{{/link-to}}
+<div class="spec-reminder-wrapper">
+  <h1 class="spec-reminder-title">{{model.title}}</h1>
+  <div>{{model.date}}</div>
+  <div>{{model.notes}}</div>
+  <button class="spec-delete-individual" {{action 'remove' model.id}}>delete this reminder</button>
+  {{#link-to "reminders.reminder.edit" class="spec-link-to-edit"}}edit this reminder{{/link-to}}
+</div>
 {{outlet}}

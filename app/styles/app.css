@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
 body {
   display: flex;
   justify-content: space-around;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .active{
@@ -20,6 +23,9 @@ a:visited {
   width: 40vw;
   display: inline-block;
   vertical-align: top;
+  min-width: 400px;
+  text-align: center;
+  margin-left: 40px;
 }
 
 /*header*/
@@ -62,7 +68,7 @@ li {
 .new-reminder-btn {
   display: inline-block;
   vertical-align: bottom;
-  margin-top: 20px;
+  margin: 20px;
   border-radius: 10px;
   border: 1px solid black;
   width: 150px;
@@ -78,6 +84,10 @@ li {
   width: 40vw;
 }
 
+.add-notes--submit {
+  margin: 10px auto;
+}
+
 /*single reminder*/
 
 .spec-reminder-title {
@@ -85,7 +95,11 @@ li {
 }
 
 .spec-reminder-delete {
-  /*margin-left: 30px;*/
+  min-width: 150px;
+}
+
+.spec-reminder-item {
+  min-width: 200px;
 }
 
 .spec-edit-btn {
@@ -107,6 +121,7 @@ button {
   background-color: white;
   border: 1px solid black;
   width: 150px;
+  margin: 10px;
 }
 
 input, textarea {
@@ -117,4 +132,13 @@ input, textarea {
 button:hover, .spec-edit-btn:hover, .new-reminder-btn:hover {
   background-color: #23F0C7;
   cursor: pointer;
+}
+
+.edit-notes--form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-notes--revert, .edit-notes--submit {
+  margin: 10px auto;
 }

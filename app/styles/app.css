@@ -12,6 +12,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: black;
+}
+
 .wrapper {
   width: 40vw;
   display: inline-block;
@@ -23,6 +27,10 @@ a {
 .header-name {
   display: flex;
   justify-content: center;
+  background-color: #EF767A;
+  margin: 0;
+  height: 80px;
+  align-items: center;
 }
 
 /*reminder-list*/
@@ -46,7 +54,7 @@ li {
 }
 
 .dirty-attribute {
-  background-color: rgba(220,20,60,.2);
+  background-color: rgba(35,240,199,.2);
 }
 
 /*new reminder*/
@@ -55,6 +63,12 @@ li {
   display: inline-block;
   vertical-align: bottom;
   margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 150px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .add-notes--form {
@@ -74,18 +88,33 @@ li {
   /*margin-left: 30px;*/
 }
 
+.spec-edit-btn {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 150px;
+  height: 20px;
+  text-align: center;
+}
+
 button {
   font-size: 12px;
   appearance: none;
   box-shadow: none;
-  border-radius: 0;
-  background-color: lightgray;
-  border: none;
-  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
   width: 150px;
 }
 
 input, textarea {
   margin: 10px;
   width: 200px;
+}
+
+button:hover, .spec-edit-btn:hover, .new-reminder-btn:hover {
+  background-color: #23F0C7;
+  cursor: pointer;
 }

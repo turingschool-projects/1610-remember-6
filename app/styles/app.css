@@ -1,8 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #86BBD8;
+  color: black;
+}
+
 .active{
-  color: magenta;
+  color: #33658A;
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+.wrapper {
+  width: 40vw;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 400px;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.header-name {
+  display: flex;
+  justify-content: center;
+  background-color: #2F4858;
+  margin: 0;
+  height: 80px;
+  align-items: center;
+  color: white;
+}
+
+.reminders-container {
+  width: 40vw;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+li {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .dirty-attribute {
-  background-color: rgba(220,20,60,.2);
+  background-color: rgba(242,100,25,.4);
+}
+
+/*new reminder*/
+
+.new-reminder-btn {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 150px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  background-color: white;
+}
+
+.add-notes--form {
+  /*margin: 20px;*/
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+.add-notes--submit {
+  margin: 10px auto;
+}
+
+.spec-reminder-title {
+  font-size: 22px;
+}
+
+.spec-reminder-delete {
+  min-width: 150px;
+}
+
+.spec-reminder-item {
+  min-width: 200px;
+}
+
+.spec-edit-btn {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 150px;
+  height: 20px;
+  text-align: center;
+  background-color: white;
+}
+
+button {
+  font-size: 12px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
+  width: 150px;
+  margin: 10px;
+}
+
+input, textarea {
+  margin: 10px;
+  width: 200px;
+}
+
+button:hover, .spec-edit-btn:hover, .new-reminder-btn:hover {
+  background-color: #33658A;
+  cursor: pointer;
+}
+
+.edit-notes--form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-notes--revert, .edit-notes--submit {
+  margin: 10px auto;
 }

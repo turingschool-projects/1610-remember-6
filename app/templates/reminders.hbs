@@ -1,20 +1,24 @@
-<h1>Reminders</h1>
+<h1 class="header-name">Reminders</h1>
 
-{{#if model}}
-  {{#each model as |reminder|}}
-    <li class={{if reminder.hasDirtyAttributes "dirty-attribute"}}>
-      {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
-        {{reminder.title}}
-      {{/link-to}}
-      <button class="spec-reminder-delete" {{action 'remove' reminder.id}}>
-        delete this reminder
-      </button>
-    </li>
-  {{/each}}
-{{else}}
-  <div class="spec-prompt-message">enter a reminder</div>
-{{/if}}
+<div class="reminders-container">
+  {{#if model}}
+    {{#each model as |reminder|}}
+      <li class={{if reminder.hasDirtyAttributes "dirty-attribute"}}>
+        {{#link-to "reminders.reminder" reminder class="spec-reminder-item"}}
+          {{reminder.title}}
+        {{/link-to}}
+        <button class="spec-reminder-delete" {{action 'remove' reminder.id}}>
+          delete this reminder
+        </button>
+      </li>
+    {{/each}}
+  {{else}}
+    <div class="spec-prompt-message">enter a reminder</div>
+  {{/if}}
+</div>
 
-{{link-to "New Reminder" "reminders.new"}}
 
-{{outlet}}
+<div class="wrapper">
+  {{link-to "New Reminder" "reminders.new"  class="new-reminder-btn"}}
+  {{outlet}}
+</div>

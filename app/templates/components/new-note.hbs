@@ -1,16 +1,18 @@
-<form class="add-notes--form" {{action 'createNote' on="submit"}}>
- <label>
-   Title
-   {{input class="spec-input-title" value=title}}
- </label>
- <label>
-   Date
-   {{input class="spec-input-date" value=date}}
- </label>
- <label>
-   Note
-   {{textarea class="spec-textarea-notes" value=notes}}
- </label>
- <button class="add-notes--submit">Submit</button>
-</form>
+<div class="add-notes-wrapper">
+  <form class="add-notes--form" {{action 'createNote' on="submit"}}>
+   <label>
+     Title
+     {{input class="spec-input-title" value=title}}
+   </label>
+   <label>
+     Date
+     {{input class="spec-input-date" value=date}}
+   </label>
+   <label>
+     Note
+     {{textarea class="spec-textarea-notes" value=notes}}
+   </label>
+   <button class="add-notes--submit">Submit</button>
+  </form>
+</div>
 {{yield}}
